@@ -38,14 +38,14 @@
     <h3>Contenido de la clase</h3>
     <ol>
       <li><a href="#s1">Mapa de 4 variables</a></li>
-      <li><a href="#s2">Diapositiva 3</a></li>
+      <li><a href="#s2">Simplificación en el Mapa de 4 Variables</a></li>
       <li><a href="#s3">Ejemplo</a></li>
-      <li><a href="#s4">Diapositiva 5</a></li>
+      <li><a href="#s4">Solución</a></li>
       <li><a href="#s5">Mapa de 5 Variables</a></li>
       <li><a href="#s6">Mapa de 5 variables</a></li>
       <li><a href="#s7">Condiciones de Indiferencia</a></li>
       <li><a href="#s8">Ejemplo</a></li>
-      <li><a href="#s9">Diapositiva 10</a></li>
+      <li><a href="#s9">Solución</a></li>
     </ol>
   </div>
 
@@ -61,7 +61,7 @@
   </section>
 
   <section class="slide reveal" id="s2" style="--reveal-delay: 0.05s;">
-    <div class="slide-head"><h2><span style="opacity:.5">Diapositiva 3</span></h2></div>
+    <div class="slide-head"><h2>Simplificación en el Mapa de 4 Variables</h2></div>
     <div class="slide-body">
       
       <div class="slide-images "><figure><img src="../img/clase-06-mapas-karnaugh-2/103230efc9.png" loading="lazy" alt="Diagrama"></figure>
@@ -74,28 +74,20 @@
   <section class="slide reveal" id="s3" style="--reveal-delay: 0.10s;">
     <div class="slide-head"><h2>Ejemplo</h2></div>
     <div class="slide-body">
-      <ul>
-<li>Simplifique la siguiente función booleana en forma de</li>
-<li>a) suma de productos</li>
-<li>b) producto de sumas</li>
-</ul>
-      <div class="slide-images single"><figure><img src="../img/clase-06-mapas-karnaugh-2/fdf589312d.png" loading="lazy" alt="Diagrama"></figure></div>
-      
+      <p>Simplifique la siguiente función booleana en forma de a) suma de productos y b) producto de sumas:</p>
+      <p class="formula">F(A, B, C, D) = Σ(0, 1, 2, 5, 8, 9, 10)</p>
     </div>
   </section>
 
   <section class="slide reveal" id="s4" style="--reveal-delay: 0.15s;">
-    <div class="slide-head"><h2><span style="opacity:.5">Diapositiva 5</span></h2></div>
+    <div class="slide-head"><h2>Solución</h2></div>
     <div class="slide-body">
-      <ul>
-<li>a)</li>
-<li>F’ = AB + CD + BD’</li>
-<li>b)Al aplicar el teorema de DeMorgan (obteniendo el dual y complementando cada literal) se obtiene la función simplificada en forma de producto de sumas:</li>
-<li>F = (A’ + B’)(C’ + D’)(B’+ D)</li>
-</ul>
-      <div class="slide-images "><figure><img src="../img/clase-06-mapas-karnaugh-2/068df56c79.png" loading="lazy" alt="Diagrama"></figure>
-<figure><img src="../img/clase-06-mapas-karnaugh-2/25b4de5900.png" loading="lazy" alt="Diagrama"></figure></div>
-      
+      <p>a) Agrupando los ceros del mapa se obtiene, en forma de suma de productos, el complemento de la función:</p>
+      <div class="slide-images single"><figure><img src="../img/clase-06-mapas-karnaugh-2/068df56c79.png" loading="lazy" alt="Mapa de Karnaugh de 4 variables con los ceros agrupados en tres bloques: columna CD=11 (término CD), fila AB=11 (término AB) y las columnas CD=00/10 con envoltura lateral (término BD′)"></figure></div>
+      <p class="formula">F' = AB + CD + BD'</p>
+      <p>b) Al aplicar el teorema de DeMorgan (obteniendo el dual y complementando cada literal) se obtiene la función simplificada en forma de producto de sumas:</p>
+      <p class="formula">F = (A' + B')(C' + D')(B' + D)</p>
+      <p class="note">DeMorgan: (x + y)' = x'·y' y (x·y)' = x' + y'.</p>
     </div>
   </section>
 
@@ -128,27 +120,30 @@
 <li>En casi todas las aplicaciones, es irrelevante el valor que asuma la función para los minitérminos no especificados. Por ello, se acostumbra llamar condiciones de indiferencia (don’t care, en inglés) a los minitérminos no especificados de una función. Conviene usar estas condiciones de indiferencia en el mapa para simplificar aún más la</li>
 <li>expresión booleana</li>
 </ul>
-      
-      
+      <p class="note">Esto resulta útil si nos permite formar un grupo más grande del que sería posible sin los que no les importa. No es necesario agrupar a todos ni a ninguno de los que no les importa.</p>
+
     </div>
   </section>
 
   <section class="slide reveal" id="s8" style="--reveal-delay: 0.35s;">
     <div class="slide-head"><h2>Ejemplo</h2></div>
     <div class="slide-body">
-      
-      <div class="slide-images single"><figure><img src="../img/clase-06-mapas-karnaugh-2/4195796dad.png" loading="lazy" alt="Diagrama"></figure></div>
-      
+      <p>Simplifique la función booleana</p>
+      <p class="formula">F(w, x, y, z) = Σ(1, 3, 7, 11, 15)</p>
+      <p>que tiene las condiciones de indiferencia</p>
+      <p class="formula">d(w, x, y, z) = Σ(0, 2, 5)</p>
     </div>
   </section>
 
   <section class="slide reveal" id="s9" style="--reveal-delay: 0.40s;">
-    <div class="slide-head"><h2><span style="opacity:.5">Diapositiva 10</span></h2></div>
+    <div class="slide-head"><h2>Solución</h2></div>
     <div class="slide-body">
-      
-      <div class="slide-images "><figure><img src="../img/clase-06-mapas-karnaugh-2/f0cb3d7e90.png" loading="lazy" alt="Diagrama"></figure>
-<figure><img src="../img/clase-06-mapas-karnaugh-2/ca8460a86d.png" loading="lazy" alt="Diagrama"></figure></div>
-      
+      <p>Los tres minitérminos de indiferencia (0, 2, 5) sólo se usan si ayudan a formar un grupo más grande. El mismo mapa admite dos agrupaciones distintas, ambas igualmente válidas:</p>
+      <div class="slide-images">
+        <figure><img src="../img/clase-06-mapas-karnaugh-2/f0cb3d7e90.png" loading="lazy" alt="Mapa de Karnaugh de 4 variables agrupando yz (minitérminos 3, 7, 11, 15) y w'x' usando las condiciones de indiferencia 0 y 2"></figure>
+        <figure><img src="../img/clase-06-mapas-karnaugh-2/ca8460a86d.png" loading="lazy" alt="Mapa de Karnaugh de 4 variables agrupando yz (minitérminos 3, 7, 11, 15) y w'z usando la condición de indiferencia 5"></figure>
+      </div>
+      <p class="note">Ambas expresiones tienen el mismo número de literales — cuando hay condiciones de indiferencia, el mapa de Karnaugh puede tener más de una simplificación mínima igualmente válida.</p>
     </div>
   </section>
 

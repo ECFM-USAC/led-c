@@ -39,9 +39,9 @@
     <ol>
       <li><a href="#s1">Complemento de una función</a></li>
       <li><a href="#s2">Encontrar el complemento de las funciones: F1=x´yz´+x´y´z F2=x(y´z´+yz) Aplicando el teorema de DeMorgan</a></li>
-      <li><a href="#s3">Diapositiva 4</a></li>
-      <li><a href="#s4">Diapositiva 5</a></li>
-      <li><a href="#s5">a) F’ = AB + CD + BD’ F = (A’ + B’)(C’ + D’)(B’+ D)</a></li>
+      <li><a href="#s3">Resultado: complemento de F1 y F2 por DeMorgan</a></li>
+      <li><a href="#s4">Método del dual para el complemento</a></li>
+      <li><a href="#s5">Ejercicio: simplificación de una función de 4 variables</a></li>
       <li><a href="#s6">Implementación con NAND y NOR</a></li>
       <li><a href="#s7">Lógica Combinacional</a></li>
       <li><a href="#s8">Procedimiento de diseño</a></li>
@@ -76,7 +76,7 @@
   </section>
 
   <section class="slide reveal" id="s3" style="--reveal-delay: 0.10s;">
-    <div class="slide-head"><h2><span style="opacity:.5">Diapositiva 4</span></h2></div>
+    <div class="slide-head"><h2>Resultado: complemento de F1 y F2 por DeMorgan</h2></div>
     <div class="slide-body">
       <ul>
 <li>Encontrar el complemento de las funciones:</li>
@@ -91,7 +91,7 @@
   </section>
 
   <section class="slide reveal" id="s4" style="--reveal-delay: 0.15s;">
-    <div class="slide-head"><h2><span style="opacity:.5">Diapositiva 5</span></h2></div>
+    <div class="slide-head"><h2>Método del dual para el complemento</h2></div>
     <div class="slide-body">
       <ul>
 <li>Un procedimiento más sencillo para deducir el complemento de una función consiste en obtener el dual de la función y complementar cada literal.</li>
@@ -103,20 +103,33 @@
   </section>
 
   <section class="slide reveal" id="s5" style="--reveal-delay: 0.20s;">
-    <div class="slide-head"><h2>a) F’ = AB + CD + BD’ F = (A’ + B’)(C’ + D’)(B’+ D)</h2></div>
+    <div class="slide-head"><h2>Ejercicio: simplificación de una función de 4 variables</h2></div>
     <div class="slide-body">
-      
+      <ul>
+<li>Simplifique la siguiente función booleana en forma de a) suma de productos y b) producto de sumas:</li>
+<li>F(A, B, C, D) = Σm(0, 1, 2, 5, 8, 9, 10)</li>
+</ul>
       <div class="slide-images single"><figure><img src="../img/clase-07-complemento-sumadores/068df56c79.png" loading="lazy" alt="Diagrama"></figure></div>
-      
+      <ul>
+<li>a) Agrupando los ceros del mapa se obtiene el complemento en suma de productos: F’ = AB + CD + BD’.</li>
+<li>b) Aplicando el teorema de DeMorgan a F’ se obtiene la función en producto de sumas: F = (A’ + B’)(C’ + D’)(B’+ D).</li>
+</ul>
     </div>
   </section>
 
   <section class="slide reveal" id="s6" style="--reveal-delay: 0.25s;">
     <div class="slide-head"><h2>Implementación con NAND y NOR</h2></div>
     <div class="slide-body">
-      
+      <ul>
+<li>NAND y NOR se conocen como <strong>compuertas universales</strong>: cualquier función booleana (empezando por el propio inversor, AND y OR) puede implementarse usando <strong>únicamente compuertas NAND</strong>, o <strong>únicamente compuertas NOR</strong>. Esto es útil en la práctica porque muchas veces solo se tiene disponible un tipo de compuerta en el laboratorio.</li>
+<li><strong>Inversor (NOT) a partir de NAND o NOR:</strong> basta con conectar ambas entradas de la compuerta entre sí. Con A=B, la salida de la NAND es (AA)’=A’, y la salida de la NOR es (A+A)’=A’; en ambos casos se obtiene el inversor.</li>
+<li><strong>AND a partir de NAND:</strong> una NAND seguida de un inversor (otra NAND con sus entradas unidas) invierte el resultado dos veces: (AB)’’ = AB. Por eso en la tabla el 74HC08 (AND) equivale a dos 74H00 (NAND) en cascada.</li>
+<li><strong>AND a partir de NOR:</strong> por el teorema de DeMorgan, AB = (A’ + B’)’. Se invierten A y B usando dos NOR como inversores, y el resultado se combina con una tercera NOR.</li>
+<li><strong>OR a partir de NAND:</strong> por DeMorgan, A + B = (A’B’)’. Se invierten A y B usando dos NAND como inversores, y el resultado se combina con una tercera NAND.</li>
+<li><strong>OR a partir de NOR:</strong> igual que el caso de AND con NAND, basta una NOR seguida de un inversor (otra NOR con sus entradas unidas): (A+B)’’ = A+B. Así el 74HC32 (OR) equivale a dos 74HC02 (NOR) en cascada.</li>
+</ul>
       <div class="slide-images single"><figure><img src="../img/clase-07-complemento-sumadores/ff352ac21c.png" loading="lazy" alt="Diagrama"></figure></div>
-      
+
     </div>
   </section>
 

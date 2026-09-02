@@ -165,17 +165,17 @@
   <section class="slide reveal" id="s4" style="--reveal-delay: 0.15s;">
     <div class="slide-head"><h2>Mapa de Karnaugh y Agrupación</h2></div>
     <div class="slide-body">
-      <p>Siguiendo los pasos de la clase anterior, cada minitérmino se coloca en su celda: la fila corresponde a L y las columnas a MP en secuencia Gray.</p>
+      <p>Siguiendo los pasos de la clase anterior, cada minitérmino se coloca en su celda: la fila corresponde a M y las columnas a PL en secuencia Gray, respetando el orden M, P, L en que se definieron las variables en la tabla de verdad.</p>
       <div class="table-wrap"><table class="data-table">
-<tr><th>L\MP</th><th>0 0</th><th>0 1</th><th>1 1</th><th>1 0</th></tr>
-<tr><td>0</td><td>0</td><td style="background: var(--u4-soft);">1</td><td style="background: linear-gradient(135deg, var(--u4-soft) 50%, var(--u6-soft) 50%);">1</td><td style="background: var(--u6-soft);">1</td></tr>
-<tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><th>M\PL</th><th>0 0</th><th>0 1</th><th>1 1</th><th>1 0</th></tr>
+<tr><td>0</td><td>0</td><td>0</td><td>0</td><td style="background: var(--u4-soft);">1</td></tr>
+<tr><td>1</td><td style="background: var(--u6-soft);">1</td><td>0</td><td>0</td><td style="background: linear-gradient(135deg, var(--u6-soft) 50%, var(--u4-soft) 50%);">1</td></tr>
 </table></div>
       <div class="kmap-legend">
-        <span class="swatch"><i style="background: var(--u4-soft); border: 1px solid var(--u4);"></i>Grupo 1 (MP=01, MP=11) → P·L̅</span>
-        <span class="swatch"><i style="background: var(--u6-soft); border: 1px solid var(--u6);"></i>Grupo 2 (MP=11, MP=10) → M·L̅</span>
+        <span class="swatch"><i style="background: var(--u6-soft); border: 1px solid var(--u6);"></i>Grupo 1 (M=1, PL=00 y PL=10) → M·L̅</span>
+        <span class="swatch"><i style="background: var(--u4-soft); border: 1px solid var(--u4);"></i>Grupo 2 (PL=10, M=0 y M=1) → P·L̅</span>
       </div>
-      <p>Los tres 1 son adyacentes en la fila L=0 y se cubren con dos parejas que se traslapan en la celda MP=11: en el Grupo 1, P y L̅ no cambian de valor (M sí, y se elimina); en el Grupo 2, M y L̅ no cambian (P sí, y se elimina). Sumando ambos términos se obtiene la expresión simplificada:</p>
+      <p>Los tres 1 son adyacentes: dos están en la fila M=1 (PL=00 y PL=10) y dos en la columna PL=10 (M=0 y M=1), traslapándose en la celda M=1, PL=10. En el Grupo 1 (fila M=1), M y L̅ no cambian de valor (P sí, y se elimina); en el Grupo 2 (columna PL=10), P y L̅ no cambian (M sí, y se elimina). Sumando ambos términos se obtiene la expresión simplificada:</p>
       <p class="formula">F = M·L̅ + P·L̅</p>
       <p class="note">Si se factoriza L̅, queda F = L̅(M+P) — la misma función, con álgebra booleana adicional sobre el resultado del mapa.</p>
     </div>
